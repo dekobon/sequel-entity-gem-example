@@ -1,0 +1,18 @@
+# This is the configuration used to check the rubocop source code.
+
+# Avoid methods longer than 20 lines of code
+MethodLength:
+  Max: 30
+
+ParameterLists:
+  Max: 6
+
+HashSyntax:
+  Enabled: false
+
+CyclomaticComplexity:
+  Max: 12
+
+AllCops:
+  Includes:
+    - Rakefile

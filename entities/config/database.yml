@@ -1,0 +1,10 @@
+# Note: case is important for the driver name, unlike Rails
+
+development:
+  driver: PostgreSQL
+  database: example
+  timeout: 5000
+  username: development
+  password: development
+  host: localhost
+  port: 5432
