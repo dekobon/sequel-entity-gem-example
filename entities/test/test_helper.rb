@@ -8,6 +8,7 @@ end
 
 puts "Running with proxy: #{ENV['http_proxy']}" if ENV.key? 'http_proxy'
 
+gem "minitest"
 require 'minitest/autorun'
 require 'minitest/reporters'
 
@@ -19,9 +20,7 @@ module TestCommon
   end
 end
 
-if ENV['ENV'] == 'jenkins' || ENV['RAILS_ENV'] == 'jenkins'
-  TestCommon.reporter = MiniTest::Reporters::JUnitReporter.new
-elsif ENV['RUBYMINE_TESTUNIT_REPORTER']
+if ENV['RUBYMINE_TESTUNIT_REPORTER']
   TestCommon.reporter = MiniTest::Reporters::RubyMineReporter.new
 else
   # Awesome colorful output

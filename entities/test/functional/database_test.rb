@@ -7,7 +7,7 @@ module Something
 end
 
 describe 'Database setup and connection providers are working' do
-  let (:config_path) { File.join(File.dirname(__FILE__), '../data') }
+  let (:config_path) { File.join(File.dirname(__FILE__), '../../config') }
   let (:config_file) { 'database.yml' }
 
   before do

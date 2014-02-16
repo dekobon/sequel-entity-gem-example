@@ -4,6 +4,7 @@ require 'yaml'
 require 'bundler/gem_tasks'
 require 'rake'
 require 'rake/testtask'
+require 'minitest'
 
 require_relative './lib/entities'
 require_relative './lib/tasks/db'
