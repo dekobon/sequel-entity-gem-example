@@ -5,5 +5,5 @@
 # will be imported into the working namespace within the application
 # that loaded the gem.
 module Entities
-  VERSION = '2.0.2'
+  VERSION = '1.0.0'
 end

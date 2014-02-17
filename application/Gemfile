@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+
+# Reference example entities project. Don't reference the path directly for
+# a real project. Rather upload the entities gem to a gem server.
+gem 'example-entities', :path => '../example-entities'
+
+# Specify your gem's dependencies in business-parser.gemspec
+gemspec

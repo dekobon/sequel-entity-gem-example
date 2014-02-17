@@ -1,0 +1,17 @@
+# Encoding: utf-8
+
+require 'yaml'
+require 'bundler/gem_tasks'
+require 'rake'
+require 'rake/testtask'
+require 'minitest'
+
+require_relative './lib/application'
+
+Rake::TestTask.new do |t|
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = true
+end
+
+desc 'Run tests'
+task :default => :test
