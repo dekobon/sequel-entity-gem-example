@@ -4,7 +4,7 @@ require 'time'
 require_relative '../../lib/entities/database'
 
 MIGRATIONS_DIR = File.absolute_path(
-    File.join(Configuration.base_path, 'db/migrate'))
+    File.join(File.dirname(__FILE__), '../../db/migrate'))
 
 # Snagged from https://gist.github.com/viking/1133150
 #
