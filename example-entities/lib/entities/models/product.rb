@@ -1,8 +1,7 @@
 # Encoding: utf-8
 
 ##
-# Advertisers are entities that can manage or submit advertisements on behalf
-# of businesses. Many times a business and an advertiser are the same entity.
+# Product is an example of a simple entity.
 class Product < Sequel::Model
   plugin :timestamps, update_on_create: true
 
