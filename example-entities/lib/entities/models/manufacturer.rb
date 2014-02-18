@@ -1,8 +1,7 @@
 # Encoding: utf-8
 
 ##
-# Advertisers are entities that can manage or submit advertisements on behalf
-# of businesses. Many times a business and an advertiser are the same entity.
+# Manufacturers are another simple entity that have a relationship with proudcts.
 class Manufacturer < Sequel::Model
   plugin :timestamps, update_on_create: true
 
