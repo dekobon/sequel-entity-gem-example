@@ -61,9 +61,7 @@ module Database
         end
       end
 
-      Sequel.connect(dsn).tap do |db|
-        setup_citext_type(db) if is_postgres
-      end
+      Sequel.connect(dsn)
     end
 
     ##
@@ -91,31 +89,6 @@ module Database
         end
 
         block.call(db) if block_given?
-      end
-    end
-
-    ##
-    # Sets up a support for the citext PostgreSQL datatype.
-    # @param db [Sequel::Database] database handle
-    def setup_citext_type(db)
-      citext_metadata = db[:pg_type].where(typname: '_citext')
-
-      if citext_metadata
-        citext_oid = citext_metadata.get(:oid)
-        citext_soid = citext_metadata.get(:typelem)
-
-        scalar_type_conversion_proc = { citext_soid => ->(s) { s } }
-
-        db.register_array_type('citext',
-                               scalar_typecast: :string,
-                               type_symbol: :string,
-                               typecast_method: :string,
-                               oid: citext_oid,
-                               type_procs: scalar_type_conversion_proc)
-
-        db.conversion_procs[citext_oid] =
-            Sequel::Postgres::PGArray::Creator.new('citext')
-
       end
     end
 
